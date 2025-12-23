@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Clothing Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">Simple Clothing Store</div>
+      <nav class="nav">
+        <button id="nav-shop" class="nav-link active">Shop</button>
+        <button id="view-cart-btn" class="nav-link">
+          Cart (<span id="cart-count">0</span>)
+        </button>
+        <button id="nav-orders" class="nav-link">My Orders</button>
+      </nav>
+      <div class="auth-controls">
+        <div id="user-info" class="hidden">
+          <span class="user-avatar" id="user-avatar">U</span>
+          <span id="user-email"></span>
+          <button id="logout-btn" class="btn btn-light btn-xs">Logout</button>
+        </div>
+        <button id="login-toggle" class="btn btn-primary btn-xs">Sign in</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="products-section">
+        <h1>Shop Clothes</h1>
+        <div id="products-grid" class="products-grid"></div>
+      </section>
+
+      <section id="cart-section" class="hidden">
+        <h1>Your Cart</h1>
+        <div class="cart-layout">
+          <div class="cart-column">
+            <div id="cart-items"></div>
+            <div id="cart-summary" class="cart-summary"></div>
+          </div>
+          <div class="cart-column">
+            <h2>Checkout</h2>
+            <form id="checkout-form" class="checkout-form">
+              <div class="form-row">
+                <label>Name</label>
+                <input type="text" id="customerName" required />
+              </div>
+              <div class="form-row">
+                <label>Email</label>
+                <input type="email" id="email" required />
+              </div>
+              <div class="form-row">
+                <label>Address</label>
+                <textarea id="address" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary full-width">
+                Place Order
+              </button>
+              <p id="checkout-message" class="message"></p>
+            </form>
+          </div>
+        </div>
+
+        <button id="back-to-products" class="btn btn-light">Back to products</button>
+      </section>
+
+      <section id="auth-section" class="auth-section hidden">
+        <div class="auth-card">
+          <div class="auth-tabs">
+            <button id="tab-login" class="auth-tab active">Login</button>
+            <button id="tab-register" class="auth-tab">Create account</button>
+          </div>
+          <div id="auth-login" class="auth-panel">
+            <h2>Welcome back</h2>
+            <p class="muted">Sign in to place your orders faster.</p>
+            <form id="login-form" class="auth-form">
+              <div class="form-row">
+                <label>Email</label>
+                <input type="email" id="login-email" required />
+              </div>
+              <div class="form-row">
+                <label>Password</label>
+                <input type="password" id="login-password" required />
+              </div>
+              <button type="submit" class="btn btn-primary full-width">Sign in</button>
+              <p id="login-message" class="message"></p>
+            </form>
+          </div>
+
+          <div id="auth-register" class="auth-panel hidden">
+            <h2>Create account</h2>
+            <p class="muted">Save your details and track orders.</p>
+            <form id="register-form" class="auth-form">
+              <div class="form-row">
+                <label>Name</label>
+                <input type="text" id="register-name" required />
+              </div>
+              <div class="form-row">
+                <label>Email</label>
+                <input type="email" id="register-email" required />
+              </div>
+              <div class="form-row">
+                <label>Password</label>
+                <input type="password" id="register-password" required />
+              </div>
+              <button type="submit" class="btn btn-primary full-width">
+                Create account
+              </button>
+              <p id="register-message" class="message"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section id="orders-section" class="hidden">
+        <h1>My Orders</h1>
+        <div id="orders-content" class="orders-list">
+          <p class="muted">Sign in and place an order to see it here.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>&copy; <span id="year"></span> Simple Clothing Store</small>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
+
+
